@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print
 
+import 'package:educatory_app/Screens/personal_information_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
@@ -163,6 +164,9 @@ class ProfilePage extends StatelessWidget {
                     leading: Icon(Icons.person_outlined),
                     contentPadding: EdgeInsets.zero,
                     minTileHeight: 0,
+                    onTap: () {
+                      Get.to(() => PersonalInformationPage());
+                    },
                     title: CommonWidgets().textWidget(
                         text: "Personal Information",
                         textColor: AppColors.blackColor.withOpacity(.5),

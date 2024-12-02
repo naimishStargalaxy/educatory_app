@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last, avoid_unnecessary_containers, prefer_interpolation_to_compose_strings
 
 import 'package:educatory_app/Helpers/utilities.dart';
+import 'package:educatory_app/Screens/course_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -119,7 +120,12 @@ class HomePage extends StatelessWidget {
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return trendingCourseWidget();
+                    return GestureDetector(
+                      onTap: () {
+                        Get.to(() => CourseDetailPage());
+                      },
+                      child: trendingCourseWidget(),
+                    );
                   },
                 ),
               ),
@@ -165,7 +171,7 @@ class HomePage extends StatelessWidget {
                       textAlign: TextAlign.center,
                       textWeight: FontWeight.w600),
                   CommonWidgets().textWidget(
-                      text: "All Courses>",
+                      text: "All Course>",
                       textColor: AppColors.primaryColor,
                       textSize: 12.0,
                       textAlign: TextAlign.center,
