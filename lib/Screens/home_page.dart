@@ -2,6 +2,7 @@
 
 import 'package:educatory_app/Helpers/utilities.dart';
 import 'package:educatory_app/Screens/course_detail_page.dart';
+import 'package:educatory_app/Screens/tutors_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -158,7 +159,12 @@ class HomePage extends StatelessWidget {
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return topLiveTutor();
+                    return GestureDetector(
+                      onTap: () {
+                        Get.to(TutorsDetailsPage());
+                      },
+                      child: topLiveTutor(),
+                    );
                   },
                 ),
               ),
