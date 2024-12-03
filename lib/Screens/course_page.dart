@@ -4,8 +4,6 @@ import 'package:educatory_app/Models/course_data_model.dart';
 import 'package:educatory_app/Screens/payment_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:percent_indicator/percent_indicator.dart';
-
 import '../Helpers/common_widget.dart';
 import '../Helpers/utilities.dart';
 

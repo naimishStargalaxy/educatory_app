@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print, use_key_in_widget_constructors
 
 import 'package:educatory_app/Helpers/common_functions.dart';
 import 'package:educatory_app/Screens/payment_page.dart';
@@ -100,16 +100,12 @@ class ProfilePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             CircleAvatar(
-                              radius: 30,
-                              backgroundImage: CommonFunctions().image == null
-                                  ? NetworkImage(
-                                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Hb5xzFZJCTW4cMqmPwsgfw-gILUV7QevvQ&s")
-                                  : FileImage(CommonFunctions().image!),
-                            ),
+                                radius: 30,
+                                backgroundImage: NetworkImage(
+                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6Hb5xzFZJCTW4cMqmPwsgfw-gILUV7QevvQ&s")),
                             GestureDetector(
                               onTap: () {
                                 CommonFunctions().pickImageFromGallery();
-                                print(CommonFunctions().image);
                               },
                               child: Container(
                                 height: 30,

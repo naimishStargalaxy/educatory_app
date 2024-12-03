@@ -3,7 +3,6 @@
 import 'package:educatory_app/Helpers/common_widget.dart';
 import 'package:educatory_app/Helpers/utilities.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class PolicyPage extends StatelessWidget {
   const PolicyPage({super.key});

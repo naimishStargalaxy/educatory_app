@@ -107,7 +107,7 @@ class HomePage extends StatelessWidget {
                       textAlign: TextAlign.center,
                       textWeight: FontWeight.w600),
                   CommonWidgets().textWidget(
-                      text: "View All>",
+                      text: "All Courses>",
                       textColor: AppColors.primaryColor,
                       textSize: 12.0,
                       textAlign: TextAlign.center,
@@ -143,7 +143,7 @@ class HomePage extends StatelessWidget {
                       textAlign: TextAlign.center,
                       textWeight: FontWeight.w600),
                   CommonWidgets().textWidget(
-                      text: "View All>",
+                      text: "All Tutors>",
                       textColor: AppColors.primaryColor,
                       textSize: 12.0,
                       textAlign: TextAlign.center,
@@ -179,7 +179,7 @@ class HomePage extends StatelessWidget {
                       textAlign: TextAlign.center,
                       textWeight: FontWeight.w600),
                   CommonWidgets().textWidget(
-                      text: "All Course>",
+                      text: "All Courses>",
                       textColor: AppColors.primaryColor,
                       textSize: 12.0,
                       textAlign: TextAlign.center,
