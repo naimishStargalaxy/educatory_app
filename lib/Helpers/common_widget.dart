@@ -16,7 +16,9 @@ class CommonWidgets {
       maxLines: textmaxLine,
       textAlign: textAlign,
       overflow: textoverFlow,
-      style: GoogleFonts.abyssinicaSil(
+      // style: GoogleFonts.abyssinicaSil(
+      //     color: textColor, fontSize: textSize, fontWeight: textWeight),
+      style: GoogleFonts.lato(
           color: textColor, fontSize: textSize, fontWeight: textWeight),
     );
   }

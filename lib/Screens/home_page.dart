@@ -20,6 +20,8 @@ class HomePage extends StatelessWidget {
         backgroundColor: AppColors.whiteColor,
         surfaceTintColor: AppColors.whiteColor,
         elevation: 0,
+        title: CommonWidgets().textWidget(
+            text: "Educatory", textSize: 18.0, textWeight: FontWeight.w600),
         actions: [
           Container(
             height: 40,
@@ -187,7 +189,12 @@ class HomePage extends StatelessWidget {
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return topNewCourses();
+                    return GestureDetector(
+                      onTap: () {
+                        Get.to(() => CourseDetailPage());
+                      },
+                      child: topNewCourses(),
+                    );
                   },
                 ),
               ),
@@ -372,7 +379,7 @@ class HomePage extends StatelessWidget {
 
   Widget liveTutorWidget({boxColor, subjectName, subjectImage}) {
     return Container(
-      width: Get.width * 0.4,
+      // width: Get.width * 0.4,
       padding: EdgeInsets.only(left: 15, right: 15),
       margin: EdgeInsets.all(5),
       decoration: BoxDecoration(
@@ -387,13 +394,13 @@ class HomePage extends StatelessWidget {
             color: Colors.white,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               CommonWidgets().textWidget(
                   text: subjectName,
                   textColor: AppColors.whiteColor,
                   textSize: 18.0,
                   textWeight: FontWeight.w600),
+              SizedBox(width: 15),
               CommonWidgets().textWidget(
                   text: "15 Tutor",
                   textColor: AppColors.whiteColor,

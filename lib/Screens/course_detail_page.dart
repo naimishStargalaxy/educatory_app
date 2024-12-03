@@ -1,7 +1,8 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_final_fields, unused_field
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_final_fields, unused_field, must_be_immutable, use_key_in_widget_constructors, unrelated_type_equality_checks
 
 import 'package:educatory_app/Controllers/course_detail_controller.dart';
 import 'package:educatory_app/Helpers/utilities.dart';
+import 'package:educatory_app/Screens/payment_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
@@ -16,21 +17,26 @@ class CourseDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
-      bottomNavigationBar: Container(
-        height: 45,
-        width: Get.width,
-        margin: EdgeInsets.only(bottom: 10, left: 15, right: 15),
-        decoration: BoxDecoration(
-          color: AppColors.primaryColor,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Center(
-          child: CommonWidgets().textWidget(
-              text: "Purchase for \$12.99",
-              textColor: AppColors.whiteColor,
-              textSize: 18.0,
-              textAlign: TextAlign.center,
-              textWeight: FontWeight.w600),
+      bottomNavigationBar: GestureDetector(
+        onTap: () {
+          Get.to(() => PaymentPage());
+        },
+        child: Container(
+          height: 45,
+          width: Get.width,
+          margin: EdgeInsets.only(bottom: 10, left: 15, right: 15),
+          decoration: BoxDecoration(
+            color: AppColors.primaryColor,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Center(
+            child: CommonWidgets().textWidget(
+                text: "Purchase for \$12.99",
+                textColor: AppColors.whiteColor,
+                textSize: 18.0,
+                textAlign: TextAlign.center,
+                textWeight: FontWeight.w600),
+          ),
         ),
       ),
       appBar: AppBar(

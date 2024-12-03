@@ -1,16 +1,14 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, unnecessary_brace_in_string_interps
 
+import 'package:educatory_app/Helpers/common_widget.dart';
+import 'package:educatory_app/Helpers/utilities.dart';
 import 'package:educatory_app/Models/course_data_model.dart';
-import 'package:educatory_app/Screens/payment_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:percent_indicator/percent_indicator.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 
-import '../Helpers/common_widget.dart';
-import '../Helpers/utilities.dart';
-
-class CoursePage extends StatelessWidget {
-  const CoursePage({super.key});
+class OwnCoursePage extends StatelessWidget {
+  const OwnCoursePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,27 +19,23 @@ class CoursePage extends StatelessWidget {
           backgroundColor: AppColors.whiteColor,
           surfaceTintColor: AppColors.whiteColor,
           title: CommonWidgets().textWidget(
-              text: "All Course", textSize: 18.0, textWeight: FontWeight.w600),
+              text: "Own Course", textSize: 18.0, textWeight: FontWeight.w600),
         ),
         body: ListView.builder(
           itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                Get.to(() => PaymentPage());
-              },
-              child: allCourseWidget(
-                courseName: courseDataModel[index].name.toString(),
-                courseType: courseDataModel[index].medium.toString(),
-              ),
+            return allCourseWidget(
+              courseName: courseDataModel[index].name.toString(),
+              courseType: courseDataModel[index].medium.toString(),
+              percentage: courseDataModel[index].percent!.toDouble(),
             );
           },
-          itemCount: courseDataModel.length,
+          itemCount: courseDataModel.length.bitLength,
           shrinkWrap: true,
           physics: ClampingScrollPhysics(),
         ));
   }
 
-  Widget allCourseWidget({courseName, courseType}) {
+  Widget allCourseWidget({courseName, courseType, percentage}) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
       padding: EdgeInsets.all(10),
@@ -80,22 +74,21 @@ class CoursePage extends StatelessWidget {
                     textColor: AppColors.blackColor.withOpacity(0.6),
                     textSize: 12.0,
                     textWeight: FontWeight.w400),
-                CommonWidgets().textWidget(
-                    text: "Julia Anatole · 1 hr",
-                    textColor: AppColors.blackColor.withOpacity(0.6),
-                    textSize: 12.0,
-                    textWeight: FontWeight.w400),
                 Divider(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    LinearPercentIndicator(
+                      width: Get.width * 0.3,
+                      lineHeight: 4,
+                      percent: percentage,
+                      padding: EdgeInsets.zero,
+                      barRadius: Radius.circular(5),
+                      backgroundColor: AppColors.greyColor,
+                      progressColor: AppColors.primaryColor,
+                    ),
                     CommonWidgets().textWidget(
-                        text: "\$12.99",
-                        textColor: AppColors.blackColor,
-                        textSize: 14.0,
-                        textWeight: FontWeight.w600),
-                    CommonWidgets().textWidget(
-                        text: "⭐4.5 (2,980)",
+                        text: "${"${percentage}".split(".").last}% Finished",
                         textColor: AppColors.blackColor,
                         textSize: 12.0,
                         textWeight: FontWeight.w400),

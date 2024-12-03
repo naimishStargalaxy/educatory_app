@@ -1,15 +1,15 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, deprecated_member_use
 
+import 'dart:io';
 import 'package:educatory_app/Helpers/utilities.dart';
 import 'package:educatory_app/Screens/course_page.dart';
-import 'package:educatory_app/Screens/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'home_page.dart';
+import 'own_course_page.dart';
 import 'profile_page.dart';
 
 class PersistenBottomNavBar extends StatelessWidget {
@@ -34,20 +34,18 @@ class PersistenBottomNavBar extends StatelessWidget {
             color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),
       ),
       onPressed: () async {
-        SharedPreferences preferences = await SharedPreferences.getInstance();
-        await preferences.clear();
-        Get.offAll(() => RegisterPage());
+        exit(0);
       },
     );
 
     AlertDialog alert = AlertDialog(
       title: Text(
-        "Logout",
+        "Exit App",
         style: GoogleFonts.poppins(
             color: Colors.black, fontSize: 20, fontWeight: FontWeight.w700),
       ),
       content: Text(
-        "Are you sure for Logout?",
+        "Are you sure for exit from app?",
         style: GoogleFonts.poppins(
             color: Colors.black, fontSize: 16, fontWeight: FontWeight.w500),
       ),
@@ -72,8 +70,8 @@ class PersistenBottomNavBar extends StatelessWidget {
         onWillPop: () => showAlertDialog(context),
         child: PersistentTabView(
           screenTransitionAnimation: ScreenTransitionAnimation(
-              curve: Curves.fastEaseInToSlowEaseOut,
-              duration: Duration(milliseconds: 750)),
+              curve: Curves.easeInOutQuad,
+              duration: Duration(milliseconds: 500)),
           tabs: [
             PersistentTabConfig(
               screen: HomePage(),
@@ -89,8 +87,19 @@ class PersistenBottomNavBar extends StatelessWidget {
             PersistentTabConfig(
               screen: CoursePage(),
               item: ItemConfig(
-                icon: Icon(Icons.menu_book),
-                title: "Course",
+                icon: Icon(Icons.school_sharp),
+                title: "All Course",
+                iconSize: 30,
+                textStyle: GoogleFonts.abyssinicaSil(
+                    fontSize: 13, fontWeight: FontWeight.w700),
+                activeForegroundColor: AppColors.primaryColor,
+              ),
+            ),
+            PersistentTabConfig(
+              screen: OwnCoursePage(),
+              item: ItemConfig(
+                icon: Icon(Icons.menu_book_outlined),
+                title: "Own Course",
                 iconSize: 30,
                 textStyle: GoogleFonts.abyssinicaSil(
                     fontSize: 13, fontWeight: FontWeight.w700),
@@ -109,7 +118,7 @@ class PersistenBottomNavBar extends StatelessWidget {
               ),
             ),
           ],
-          navBarBuilder: (navBarConfig) => Style1BottomNavBar(
+          navBarBuilder: (navBarConfig) => Style8BottomNavBar(
             navBarConfig: navBarConfig,
             navBarDecoration: NavBarDecoration(
               color: AppColors.whiteColor,
