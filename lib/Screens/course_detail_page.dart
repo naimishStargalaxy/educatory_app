@@ -15,187 +15,190 @@ class CourseDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.whiteColor,
-      bottomNavigationBar: GestureDetector(
-        onTap: () {
-          Get.to(() => PaymentPage());
-        },
-        child: Container(
-          height: 45,
-          width: Get.width,
-          margin: EdgeInsets.only(bottom: 10, left: 15, right: 15),
-          decoration: BoxDecoration(
-            color: AppColors.primaryColor,
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Center(
-            child: CommonWidgets().textWidget(
-                text: "Purchase for \$12.99",
-                textColor: AppColors.whiteColor,
-                textSize: 18.0,
-                textAlign: TextAlign.center,
-                textWeight: FontWeight.w600),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: AppColors.whiteColor,
+        bottomNavigationBar: GestureDetector(
+          onTap: () {
+            Get.to(() => PaymentPage());
+          },
+          child: Container(
+            height: 45,
+            width: Get.width,
+            margin: EdgeInsets.only(bottom: 10, left: 15, right: 15),
+            decoration: BoxDecoration(
+              color: AppColors.primaryColor,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Center(
+              child: CommonWidgets().textWidget(
+                  text: "Purchase for \$12.99",
+                  textColor: AppColors.whiteColor,
+                  textSize: 18.0,
+                  textAlign: TextAlign.center,
+                  textWeight: FontWeight.w600),
+            ),
           ),
         ),
-      ),
-      appBar: AppBar(
-        backgroundColor: AppColors.primaryColor,
-        iconTheme: IconThemeData(color: AppColors.whiteColor),
-        title: CommonWidgets().textWidget(
-            text: "About Course",
-            textSize: 16.0,
-            textWeight: FontWeight.w500,
-            textColor: AppColors.whiteColor),
-      ),
-      body: Obx(
-        () => SingleChildScrollView(
-          child: Column(
-            children: [
-              Stack(
-                children: [
-                  Container(
-                    height: Get.height * 0.2,
-                    width: Get.width,
-                    color: AppColors.primaryColor,
-                  ),
-                  Center(
-                    child: Container(
-                      width: Get.width * 0.9,
-                      margin: EdgeInsets.only(top: Get.height * 0.05),
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: AppColors.whiteColor2,
-                        boxShadow: [
-                          BoxShadow(
-                            color: AppColors.greyColor,
-                          )
-                        ],
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            height: 120,
-                            width: Get.width,
-                            decoration: BoxDecoration(
-                                color: AppColors.greyColor,
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                        "https://static.vecteezy.com/ti/vettori-gratis/p1/22901895-astratto-digitale-tecnologia-futuristico-circuito-blu-viola-sfondo-informatica-scienza-tecnologia-innovazione-comunicazione-futuro-ai-grande-dati-internet-rete-connessione-nube-hi-tech-illustrazione-vettore-gratuito-vettoriale.jpg"),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(15)),
-                          ),
-                          SizedBox(height: 5),
-                          CommonWidgets().textWidget(
-                              text: "Advanced Front-End Programming Techniques",
-                              textSize: 16.0,
-                              textWeight: FontWeight.w600,
-                              textmaxLine: 2,
-                              textoverFlow: TextOverflow.ellipsis,
-                              textColor: AppColors.blackColor),
-                          SizedBox(height: 5),
-                          CommonWidgets().textWidget(
-                              text: "Julia Anatole · 1hr",
-                              textSize: 12.0,
-                              textWeight: FontWeight.w400,
-                              textoverFlow: TextOverflow.ellipsis,
-                              textColor: AppColors.blackColor),
-                          SizedBox(height: 5),
-                          Divider(),
-                          SizedBox(height: 5),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                padding: EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(5),
-                                    color:
-                                        AppColors.greenColor.withOpacity(0.2)),
-                                child: CommonWidgets().textWidget(
-                                    text: "Top Author",
+        appBar: AppBar(
+          backgroundColor: AppColors.primaryColor,
+          iconTheme: IconThemeData(color: AppColors.whiteColor),
+          title: CommonWidgets().textWidget(
+              text: "About Course",
+              textSize: 16.0,
+              textWeight: FontWeight.w500,
+              textColor: AppColors.whiteColor),
+        ),
+        body: Obx(
+          () => SingleChildScrollView(
+            child: Column(
+              children: [
+                Stack(
+                  children: [
+                    Container(
+                      height: Get.height * 0.2,
+                      width: Get.width,
+                      color: AppColors.primaryColor,
+                    ),
+                    Center(
+                      child: Container(
+                        width: Get.width * 0.9,
+                        margin: EdgeInsets.only(top: Get.height * 0.05),
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: AppColors.whiteColor2,
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.greyColor,
+                            )
+                          ],
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              height: 120,
+                              width: Get.width,
+                              decoration: BoxDecoration(
+                                  color: AppColors.greyColor,
+                                  image: DecorationImage(
+                                      image: NetworkImage(
+                                          "https://static.vecteezy.com/ti/vettori-gratis/p1/22901895-astratto-digitale-tecnologia-futuristico-circuito-blu-viola-sfondo-informatica-scienza-tecnologia-innovazione-comunicazione-futuro-ai-grande-dati-internet-rete-connessione-nube-hi-tech-illustrazione-vettore-gratuito-vettoriale.jpg"),
+                                      fit: BoxFit.cover),
+                                  borderRadius: BorderRadius.circular(15)),
+                            ),
+                            SizedBox(height: 5),
+                            CommonWidgets().textWidget(
+                                text:
+                                    "Advanced Front-End Programming Techniques",
+                                textSize: 16.0,
+                                textWeight: FontWeight.w600,
+                                textmaxLine: 2,
+                                textoverFlow: TextOverflow.ellipsis,
+                                textColor: AppColors.blackColor),
+                            SizedBox(height: 5),
+                            CommonWidgets().textWidget(
+                                text: "Julia Anatole · 1hr",
+                                textSize: 12.0,
+                                textWeight: FontWeight.w400,
+                                textoverFlow: TextOverflow.ellipsis,
+                                textColor: AppColors.blackColor),
+                            SizedBox(height: 5),
+                            Divider(),
+                            SizedBox(height: 5),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.all(5),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5),
+                                      color: AppColors.greenColor
+                                          .withOpacity(0.2)),
+                                  child: CommonWidgets().textWidget(
+                                      text: "Top Author",
+                                      textSize: 14.0,
+                                      textWeight: FontWeight.w500,
+                                      textColor: AppColors.blackColor),
+                                ),
+                                CommonWidgets().textWidget(
+                                    text: "⭐4.5 (2,980)",
+                                    textColor: AppColors.blackColor,
                                     textSize: 14.0,
-                                    textWeight: FontWeight.w500,
-                                    textColor: AppColors.blackColor),
-                              ),
-                              CommonWidgets().textWidget(
-                                  text: "⭐4.5 (2,980)",
-                                  textColor: AppColors.blackColor,
-                                  textSize: 14.0,
-                                  textWeight: FontWeight.w400),
-                            ],
-                          )
-                        ],
+                                    textWeight: FontWeight.w400),
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(height: 15),
+                Container(
+                  width: Get.width * 0.9,
+                  padding: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                      color: AppColors.whiteColor2,
+                      borderRadius: BorderRadius.circular(15)),
+                  child: CommonWidgets().textWidget(
+                    text:
+                        "The Advanced Front-End Programming course sharpens students' critical thinking, creativity, and analytical skills, empowering them to effectively tackle complex challenges in web development.",
+                  ),
+                ),
+                SizedBox(height: 15),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        _courseDetailController.selectedIndex.value = 0;
+                      },
+                      child: CommonWidgets().textWidget(
+                        text: "About",
+                        textColor: _courseDetailController.selectedIndex == 0
+                            ? AppColors.primaryColor
+                            : AppColors.blackColor,
+                        textWeight: FontWeight.w600,
                       ),
                     ),
-                  )
-                ],
-              ),
-              SizedBox(height: 15),
-              Container(
-                width: Get.width * 0.9,
-                padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                    color: AppColors.whiteColor2,
-                    borderRadius: BorderRadius.circular(15)),
-                child: CommonWidgets().textWidget(
-                  text:
-                      "The Advanced Front-End Programming course sharpens students' critical thinking, creativity, and analytical skills, empowering them to effectively tackle complex challenges in web development.",
+                    GestureDetector(
+                      onTap: () {
+                        _courseDetailController.selectedIndex.value = 1;
+                      },
+                      child: CommonWidgets().textWidget(
+                        text: "Reviews",
+                        textColor: _courseDetailController.selectedIndex == 1
+                            ? AppColors.primaryColor
+                            : AppColors.blackColor,
+                        textWeight: FontWeight.w600,
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        _courseDetailController.selectedIndex.value = 2;
+                      },
+                      child: CommonWidgets().textWidget(
+                        text: "Author",
+                        textColor: _courseDetailController.selectedIndex == 2
+                            ? AppColors.primaryColor
+                            : AppColors.blackColor,
+                        textWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-              SizedBox(height: 15),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      _courseDetailController.selectedIndex.value = 0;
-                    },
-                    child: CommonWidgets().textWidget(
-                      text: "About",
-                      textColor: _courseDetailController.selectedIndex == 0
-                          ? AppColors.primaryColor
-                          : AppColors.blackColor,
-                      textWeight: FontWeight.w600,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      _courseDetailController.selectedIndex.value = 1;
-                    },
-                    child: CommonWidgets().textWidget(
-                      text: "Reviews",
-                      textColor: _courseDetailController.selectedIndex == 1
-                          ? AppColors.primaryColor
-                          : AppColors.blackColor,
-                      textWeight: FontWeight.w600,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      _courseDetailController.selectedIndex.value = 2;
-                    },
-                    child: CommonWidgets().textWidget(
-                      text: "Author",
-                      textColor: _courseDetailController.selectedIndex == 2
-                          ? AppColors.primaryColor
-                          : AppColors.blackColor,
-                      textWeight: FontWeight.w600,
-                    ),
-                  ),
-                ],
-              ),
-              Divider(
-                thickness: 2,
-              ),
-              _courseDetailController.selectedIndex.value == 0
-                  ? aboutWidget()
-                  : _courseDetailController.selectedIndex.value == 1
-                      ? reviewWidget()
-                      : authorWidget()
-            ],
+                Divider(
+                  thickness: 2,
+                ),
+                _courseDetailController.selectedIndex.value == 0
+                    ? aboutWidget()
+                    : _courseDetailController.selectedIndex.value == 1
+                        ? reviewWidget()
+                        : authorWidget()
+              ],
+            ),
           ),
         ),
       ),

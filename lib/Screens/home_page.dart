@@ -2,6 +2,7 @@
 
 import 'package:educatory_app/Helpers/utilities.dart';
 import 'package:educatory_app/Screens/course_detail_page.dart';
+import 'package:educatory_app/Screens/notification_page.dart';
 import 'package:educatory_app/Screens/tutors_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,13 +25,18 @@ class HomePage extends StatelessWidget {
         title: CommonWidgets().textWidget(
             text: "Educatory", textSize: 18.0, textWeight: FontWeight.w600),
         actions: [
-          Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-                border: Border.all(color: AppColors.greyColor),
-                shape: BoxShape.circle),
-            child: Icon(Icons.notifications),
+          GestureDetector(
+            onTap: () {
+              Get.to(() => NotificationPage());
+            },
+            child: Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                  border: Border.all(color: AppColors.greyColor),
+                  shape: BoxShape.circle),
+              child: Icon(Icons.notifications),
+            ),
           ),
           SizedBox(width: 10),
           Container(

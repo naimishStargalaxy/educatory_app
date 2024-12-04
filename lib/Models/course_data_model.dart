@@ -8,7 +8,7 @@ class CourseDataModel {
 
 List<CourseDataModel> courseDataModel = [
   CourseDataModel(
-    name: "B.C.A",
+    name: "B.C.A.",
     medium: "Internal English Medium",
     percent: 0.73,
   ),

@@ -47,6 +47,8 @@ dependencies:
   flutter_rating_bar:
   percent_indicator:
   image_picker:
+  syncfusion_flutter_pdfviewer:
+  flutter_widget_from_html:
 
 dev_dependencies:
   flutter_test:
