@@ -112,7 +112,7 @@ class SupportPage extends StatelessWidget {
                                           border: InputBorder.none,
                                           hintText: "Type Discription",
                                           contentPadding: EdgeInsets.symmetric(
-                                              horizontal: 10)),
+                                              horizontal: 10, vertical: 10)),
                                     ),
                                   ),
                                   SizedBox(height: 20),

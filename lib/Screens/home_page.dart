@@ -3,8 +3,10 @@
 import 'package:educatory_app/Helpers/utilities.dart';
 import 'package:educatory_app/Screens/course_detail_page.dart';
 import 'package:educatory_app/Screens/notification_page.dart';
+import 'package:educatory_app/Screens/subject_details_page.dart';
 import 'package:educatory_app/Screens/tutors_details_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -23,7 +25,7 @@ class HomePage extends StatelessWidget {
         surfaceTintColor: AppColors.whiteColor,
         elevation: 0,
         title: CommonWidgets().textWidget(
-            text: "Educatory", textSize: 18.0, textWeight: FontWeight.w600),
+            text: "Educatory", textSize: 20.0, textWeight: FontWeight.w600),
         actions: [
           GestureDetector(
             onTap: () {
@@ -50,7 +52,7 @@ class HomePage extends StatelessWidget {
           SizedBox(width: 10),
         ],
       ),
-      drawer: drawerWidget(),
+      // drawer: drawerWidget(),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 15),
         child: SingleChildScrollView(
@@ -85,22 +87,46 @@ class HomePage extends StatelessWidget {
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    return liveTutorWidget(
-                      boxColor: tutorDataModel[index].themecolor,
-                      subjectName: tutorDataModel[index].name,
-                      subjectImage: tutorDataModel[index].image,
+                    return GestureDetector(
+                      onTap: () {
+                        Get.to(() => SubjectDetailsPage());
+                      },
+                      child: liveTutorWidget(
+                        boxColor: tutorDataModel[index].themecolor,
+                        subjectName: tutorDataModel[index].name,
+                        subjectImage: tutorDataModel[index].image,
+                      ),
                     );
                   },
                 ),
               ),
               SizedBox(height: Get.height * 0.01),
-              Container(
-                height: 150,
-                width: Get.width,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage(AppImages.images + "Banner.png"),
-                        fit: BoxFit.fill)),
+              FlutterCarousel(
+                options: FlutterCarouselOptions(
+                  height: 150.0,
+                  showIndicator: false,
+                  autoPlay: true,
+                  autoPlayCurve: Easing.standard,
+                  autoPlayAnimationDuration: Duration(seconds: 1),
+                  autoPlayInterval: Duration(seconds: 4),
+                  // enlargeCenterPage: true,
+                  enableInfiniteScroll: true,
+                ),
+                items: [1, 2, 3, 4, 5].map((i) {
+                  return Builder(
+                    builder: (BuildContext context) {
+                      return Container(
+                        height: 150,
+                        width: Get.width,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image:
+                                    AssetImage(AppImages.images + "Banner.png"),
+                                fit: BoxFit.fill)),
+                      );
+                    },
+                  );
+                }).toList(),
               ),
               SizedBox(height: Get.height * 0.02),
               Row(

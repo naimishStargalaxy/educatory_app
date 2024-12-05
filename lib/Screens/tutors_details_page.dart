@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors
 
 import 'package:educatory_app/Helpers/common_widget.dart';
 import 'package:educatory_app/Helpers/utilities.dart';
@@ -6,7 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class TutorsDetailsPage extends StatelessWidget {
-  const TutorsDetailsPage({super.key});
+  Color getIconColor(Color color) {
+    final luminance = color.computeLuminance();
+
+    const brightnessThreshold = 0.5;
+
+    return luminance > brightnessThreshold ? Colors.black : Colors.white;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +28,12 @@ class TutorsDetailsPage extends StatelessWidget {
                 flexibleSpace: FlexibleSpaceBar(
                     centerTitle: true,
                     title: CommonWidgets().textWidget(
-                        text: "Sarah Logan",
+                        text: "The Proffesor",
                         textSize: 20.0,
+                        textColor: getIconColor(AppColors.whiteColor),
                         textWeight: FontWeight.w600),
                     background: Image.network(
-                      "https://media.istockphoto.com/id/1408920978/photo/positive-happy-older-business-teacher-woman-video-call-head-shot.jpg?s=612x612&w=0&k=20&c=TB99i4skCGVf_W6qd7p2dLPt0OaL8j0RfrWl6AVRPwE=",
+                      "https://www.semana.com/resizer/v2/7LQYO2FJ3VCPBEYVQXZO7SR3BU.jpg?auth=31db9b21ac45462066f73c2fc5a5a08bbc485cac8d4fed63b36b829793568e73&smart=true&quality=75&width=1280&height=720",
                       fit: BoxFit.cover,
                     )),
                 expandedHeight: 250,
