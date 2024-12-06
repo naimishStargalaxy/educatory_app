@@ -36,6 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   get:
+  http:
   shared_preferences:
   google_fonts:
   fluttertoast:
@@ -51,6 +52,7 @@ dependencies:
   flutter_widget_from_html:
   flutter_carousel_widget:
   flutter_native_splash:
+  flutter_media_downloader:
 
 dev_dependencies:
   flutter_test:

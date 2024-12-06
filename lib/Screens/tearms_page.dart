@@ -4,6 +4,7 @@ import 'package:educatory_app/Helpers/common_widget.dart';
 import 'package:educatory_app/Helpers/utilities.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+import 'package:get/get.dart';
 
 class TearmsPage extends StatelessWidget {
   @override
@@ -19,6 +20,12 @@ class TearmsPage extends StatelessWidget {
               text: "Tearms & Conditions",
               textSize: 18.0,
               textWeight: FontWeight.w600),
+          bottom: PreferredSize(
+              preferredSize: Size(Get.width, 10),
+              child: Divider(
+                thickness: 5,
+                color: AppColors.greyColor,
+              )),
         ),
         body: Center(
           child: SingleChildScrollView(

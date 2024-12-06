@@ -4,6 +4,7 @@ import 'package:educatory_app/Helpers/common_widget.dart';
 import 'package:educatory_app/Helpers/utilities.dart';
 import 'package:educatory_app/Models/course_data_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_media_downloader/flutter_media_downloader.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
@@ -26,6 +27,12 @@ class OwnCoursePage extends StatelessWidget {
                 text: "Own Course",
                 textSize: 18.0,
                 textWeight: FontWeight.w600),
+            bottom: PreferredSize(
+                preferredSize: Size(Get.width, 10),
+                child: Divider(
+                  thickness: 5,
+                  color: AppColors.greyColor,
+                )),
           ),
           body: ListView.builder(
             itemBuilder: (context, index) {
@@ -145,6 +152,12 @@ class _SemesterPageState extends State<SemesterPage> {
               text: "${data.value.name} Semesters",
               textSize: 18.0,
               textWeight: FontWeight.w600),
+          bottom: PreferredSize(
+              preferredSize: Size(Get.width, 10),
+              child: Divider(
+                thickness: 5,
+                color: AppColors.greyColor,
+              )),
         ),
         body: SingleChildScrollView(
           child: Center(
@@ -245,6 +258,12 @@ class _ChapterPageState extends State<ChapterPage> {
               text: "${data.value.name} Chapters",
               textSize: 18.0,
               textWeight: FontWeight.w600),
+          bottom: PreferredSize(
+              preferredSize: Size(Get.width, 10),
+              child: Divider(
+                thickness: 5,
+                color: AppColors.greyColor,
+              )),
         ),
         body: SingleChildScrollView(
           child: Center(
@@ -270,6 +289,8 @@ class _ChapterPageState extends State<ChapterPage> {
                     itemBuilder: (context, index) {
                       return GestureDetector(
                           onTap: () {
+                            MediaDownload().downloadMedia(context,
+                                'https://cdn.syncfusion.com/content/PDFViewer/flutter-succinctly.pdf');
                             Get.to(() => PdfViewer());
                           },
                           child: chapterWidget(index: index + 1));

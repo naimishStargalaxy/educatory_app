@@ -102,6 +102,12 @@ class PaymentPage extends StatelessWidget {
               text: "Order Details",
               textSize: 16.0,
               textWeight: FontWeight.w500),
+          bottom: PreferredSize(
+              preferredSize: Size(Get.width, 10),
+              child: Divider(
+                thickness: 5,
+                color: AppColors.greyColor,
+              )),
         ),
         body: Column(
           children: [

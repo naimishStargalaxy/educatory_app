@@ -20,6 +20,12 @@ class CoursePage extends StatelessWidget {
           surfaceTintColor: AppColors.whiteColor,
           title: CommonWidgets().textWidget(
               text: "All Course", textSize: 18.0, textWeight: FontWeight.w600),
+          bottom: PreferredSize(
+              preferredSize: Size(Get.width, 10),
+              child: Divider(
+                thickness: 5,
+                color: AppColors.greyColor,
+              )),
         ),
         body: ListView.builder(
           itemBuilder: (context, index) {

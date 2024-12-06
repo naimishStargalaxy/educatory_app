@@ -20,6 +20,12 @@ class PersonalInformationPage extends StatelessWidget {
               text: "Personal information",
               textSize: 16.0,
               textWeight: FontWeight.w500),
+          bottom: PreferredSize(
+              preferredSize: Size(Get.width, 10),
+              child: Divider(
+                thickness: 5,
+                color: AppColors.greyColor,
+              )),
         ),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15),

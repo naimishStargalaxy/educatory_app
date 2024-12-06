@@ -21,6 +21,12 @@ class SupportPage extends StatelessWidget {
               text: "Support Tickets",
               textSize: 18.0,
               textWeight: FontWeight.w600),
+          bottom: PreferredSize(
+              preferredSize: Size(Get.width, 10),
+              child: Divider(
+                thickness: 5,
+                color: AppColors.greyColor,
+              )),
         ),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
@@ -166,7 +172,7 @@ class SupportPage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return ticketWidget();
                   },
-                  itemCount: 2,
+                  itemCount: 20,
                   padding: EdgeInsets.symmetric(vertical: 10),
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),

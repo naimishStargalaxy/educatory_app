@@ -24,6 +24,12 @@ class NotificationPage extends StatelessWidget {
             IconButton(
                 onPressed: () {}, icon: Icon(Icons.mark_chat_read_outlined))
           ],
+          bottom: PreferredSize(
+              preferredSize: Size(Get.width, 10),
+              child: Divider(
+                thickness: 5,
+                color: AppColors.greyColor,
+              )),
         ),
         body: SingleChildScrollView(
           child: Column(

@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../Helpers/common_widget.dart';
 import '../Models/tutor_data_model.dart';
 
@@ -52,7 +51,6 @@ class HomePage extends StatelessWidget {
           SizedBox(width: 10),
         ],
       ),
-      // drawer: drawerWidget(),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 15),
         child: SingleChildScrollView(
@@ -109,7 +107,6 @@ class HomePage extends StatelessWidget {
                   autoPlayCurve: Easing.standard,
                   autoPlayAnimationDuration: Duration(seconds: 1),
                   autoPlayInterval: Duration(seconds: 4),
-                  // enlargeCenterPage: true,
                   enableInfiniteScroll: true,
                 ),
                 items: [1, 2, 3, 4, 5].map((i) {
@@ -241,157 +238,6 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-
-  Drawer drawerWidget() {
-    return Drawer(
-      child: Column(
-        children: [
-          DrawerHeader(
-            decoration: BoxDecoration(color: AppColors.whiteColor),
-            child: SizedBox(
-              width: Get.width,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    radius: 30,
-                  ),
-                  SizedBox(height: 5),
-                  CommonWidgets().textWidget(
-                      text: "Test User",
-                      textColor: AppColors.blackColor,
-                      textSize: 18.0,
-                      textAlign: TextAlign.center,
-                      textWeight: FontWeight.w700),
-                  SizedBox(height: 5),
-                  CommonWidgets().textWidget(
-                      text: "+91 1234567890",
-                      textColor: AppColors.blackColor.withOpacity(0.5),
-                      textSize: 14.0,
-                      textAlign: TextAlign.center,
-                      textWeight: FontWeight.w500),
-                ],
-              ),
-            ),
-          ),
-          ListTile(
-              title: Row(
-            children: [
-              Icon(
-                Icons.home,
-                color: AppColors.whiteColor,
-              ),
-              SizedBox(width: 15),
-              CommonWidgets().textWidget(
-                  text: "Home",
-                  textColor: AppColors.whiteColor,
-                  textSize: 16.0,
-                  textAlign: TextAlign.center,
-                  textWeight: FontWeight.w600),
-            ],
-          )),
-          ListTile(
-              title: Row(
-            children: [
-              Icon(
-                Icons.message,
-                color: AppColors.whiteColor,
-              ),
-              SizedBox(width: 15),
-              CommonWidgets().textWidget(
-                  text: "Message",
-                  textColor: AppColors.whiteColor,
-                  textSize: 16.0,
-                  textAlign: TextAlign.center,
-                  textWeight: FontWeight.w600),
-            ],
-          )),
-          ListTile(
-              title: Row(
-            children: [
-              Icon(
-                Icons.co_present_sharp,
-                color: AppColors.whiteColor,
-              ),
-              SizedBox(width: 15),
-              CommonWidgets().textWidget(
-                  text: "Tutor Booking",
-                  textColor: AppColors.whiteColor,
-                  textSize: 16.0,
-                  textAlign: TextAlign.center,
-                  textWeight: FontWeight.w600),
-            ],
-          )),
-          ListTile(
-              title: Row(
-            children: [
-              Icon(
-                Icons.menu_book,
-                color: AppColors.whiteColor,
-              ),
-              SizedBox(width: 15),
-              CommonWidgets().textWidget(
-                  text: "My Course",
-                  textColor: AppColors.whiteColor,
-                  textSize: 16.0,
-                  textAlign: TextAlign.center,
-                  textWeight: FontWeight.w600),
-            ],
-          )),
-          ListTile(
-              title: Row(
-            children: [
-              Icon(
-                Icons.star_rate,
-                color: AppColors.whiteColor,
-              ),
-              SizedBox(width: 15),
-              CommonWidgets().textWidget(
-                  text: "Ratings",
-                  textColor: AppColors.whiteColor,
-                  textSize: 16.0,
-                  textAlign: TextAlign.center,
-                  textWeight: FontWeight.w600),
-            ],
-          )),
-          ListTile(
-              title: Row(
-            children: [
-              Icon(
-                Icons.person,
-                color: AppColors.whiteColor,
-              ),
-              SizedBox(width: 15),
-              CommonWidgets().textWidget(
-                  text: "Profile",
-                  textColor: AppColors.whiteColor,
-                  textSize: 16.0,
-                  textAlign: TextAlign.center,
-                  textWeight: FontWeight.w600),
-            ],
-          )),
-          ListTile(
-              title: Row(
-            children: [
-              Icon(
-                Icons.logout,
-                color: AppColors.whiteColor,
-              ),
-              SizedBox(width: 15),
-              CommonWidgets().textWidget(
-                  text: "Log Out",
-                  textColor: AppColors.whiteColor,
-                  textSize: 16.0,
-                  textAlign: TextAlign.center,
-                  textWeight: FontWeight.w600),
-            ],
-          )),
-        ],
-      ),
-      backgroundColor: AppColors.blackColor,
     );
   }
 
