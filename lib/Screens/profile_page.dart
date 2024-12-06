@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print, use_key_in_widget_constructors
 
 import 'package:educatory_app/Helpers/common_functions.dart';
+import 'package:educatory_app/Screens/delete_account_page.dart';
 import 'package:educatory_app/Screens/payment_page.dart';
 import 'package:educatory_app/Screens/personal_information_page.dart';
 import 'package:educatory_app/Screens/policy_page.dart';
@@ -340,9 +341,7 @@ class ProfilePage extends StatelessWidget {
                       contentPadding: EdgeInsets.zero,
                       minTileHeight: 0,
                       onTap: () {
-                        CommonWidgets().toast(
-                            toastColor: AppColors.redColor.withOpacity(.7),
-                            toastMsg: "This Feature Add Soon.");
+                        Get.to(() => DeleteAccountPage());
                       },
                       title: CommonWidgets().textWidget(
                           text: "Delete Account",
