@@ -72,7 +72,7 @@ class PaymentPage extends StatelessWidget {
                       ],
                       content: Container(
                         child: Lottie.asset(AppImages.icons + "check.json",
-                            repeat: false),
+                            frameRate: FrameRate(120), repeat: false),
                       ));
                 },
                 child: Container(
