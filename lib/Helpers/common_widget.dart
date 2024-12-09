@@ -13,6 +13,7 @@ class CommonWidgets {
       textoverFlow}) {
     return Text(
       text,
+      
       maxLines: textmaxLine,
       textAlign: textAlign,
       overflow: textoverFlow,
