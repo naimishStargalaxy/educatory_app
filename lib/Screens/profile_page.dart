@@ -87,7 +87,6 @@ class ProfilePage extends StatelessWidget {
                   ),
                   Center(
                     child: Container(
-                      // height: Get.height * 0.2,
                       width: Get.width * 0.9,
                       margin: EdgeInsets.only(top: Get.height * 0.1),
                       padding: EdgeInsets.all(15),

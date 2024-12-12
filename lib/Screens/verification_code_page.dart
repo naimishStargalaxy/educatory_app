@@ -106,28 +106,6 @@ class VerificationCodePage extends StatelessWidget {
                     },
                   ),
                 ),
-                // SizedBox(height: Get.height * 0.04),
-                // GestureDetector(
-                //   onTap: () {
-                //     Get.to(() => UserInformationPage());
-                //   },
-                //   child: Container(
-                //     height: 45,
-                //     width: Get.width,
-                //     decoration: BoxDecoration(
-                //       color: AppColors.primaryColor,
-                //       borderRadius: BorderRadius.circular(10),
-                //     ),
-                //     child: Center(
-                //       child: CommonWidgets().textWidget(
-                //           text: "Continue",
-                //           textColor: AppColors.whiteColor,
-                //           textSize: 18.0,
-                //           textAlign: TextAlign.center,
-                //           textWeight: FontWeight.w500),
-                //     ),
-                //   ),
-                // ),
               ],
             ),
           ),

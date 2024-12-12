@@ -75,7 +75,6 @@ class RegisterPage extends StatelessWidget {
                       selectorType: PhoneInputSelectorType.DIALOG,
                       useBottomSheetSafeArea: true,
                     ),
-                    // ignoreBlank: true,
                     textAlignVertical: TextAlignVertical.top,
                     autoValidateMode: AutovalidateMode.disabled,
                     selectorTextStyle: TextStyle(color: Colors.black),

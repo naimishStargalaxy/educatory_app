@@ -6,7 +6,6 @@ import 'package:educatory_app/Screens/payment_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
-
 import '../Helpers/common_widget.dart';
 
 class CourseDetailPage extends StatelessWidget {

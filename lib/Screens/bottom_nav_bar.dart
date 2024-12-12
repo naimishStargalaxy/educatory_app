@@ -57,6 +57,7 @@ class PersistenBottomNavBar extends StatelessWidget {
 
     showDialog(
       context: context,
+      barrierDismissible: false,
       builder: (BuildContext context) {
         return alert;
       },
